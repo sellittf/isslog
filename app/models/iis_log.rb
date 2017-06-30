@@ -16,8 +16,12 @@ class IisLog
       client_ip = request.split[fields.index 'c-ip']
 
       h[client_ip] ||= {number_of_requests: 0, fqdn: nil}
-      h[client_ip][:fqdn] ||= begin Resolv.getname(client_ip) rescue '' end
       h[client_ip][:number_of_requests] += 1
+      h[client_ip][:fqdn] ||= begin
+          client_ip =~ /^::1/ ? 'localhost' : Resolv.getname(client_ip)
+        rescue
+          ''
+        end
     end
 
     h.sort_by {|k, v| v[:number_of_requests] }.reverse.to_h
