@@ -1,0 +1,10 @@
+%ul.list-group
+  - @parsed_log.each_pair do |client_ip, v|
+    %li.list-group-item
+      .row
+        .col-sm-6
+          = client_ip
+        .col-sm-5
+          = v[:fqdn]
+        .col-sm-1.text-right
+          .badge= v[:number_of_requests]

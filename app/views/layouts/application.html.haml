@@ -1,0 +1,16 @@
+!!!
+%html
+  %head
+    %title IISLog
+    = csrf_meta_tags
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+  %body
+    .container.well
+      .row
+        .col-sm-6.h2
+          ISS Log
+        .col-sm-6.h2.text-right
+          %small
+            Franco Sellitto
+      = yield

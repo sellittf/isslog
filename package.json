@@ -1,0 +1,11 @@
+{
+  "name": "IISLog",
+  "private": true,
+  "dependencies": {
+    "bootstrap": "^3.3.7"
+  },
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Franco Sellitto <franco.sellitto@zhdk.ch>",
+  "license": "MIT"
+}
